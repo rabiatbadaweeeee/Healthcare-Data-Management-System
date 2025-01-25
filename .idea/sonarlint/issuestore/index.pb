@@ -5,3 +5,5 @@ M
 contracts/access-control.clar,6/6/669f44b87120b222b50b4b39670be7edd9bd587e
 L
 tests/access-control.test.ts,1/e/1e94a77628633661eb7a04e44552fb418034370a
+J
+contracts/audit-trail.clar,b/6/b6671a06cd13e1dc7096347f063b75b96e221363
