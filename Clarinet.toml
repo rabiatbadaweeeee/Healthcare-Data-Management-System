@@ -19,6 +19,11 @@ epoch = 2.5
 path = 'contracts/medical-certification-nfts.clar'
 clarity_version = 2
 epoch = 2.5
+
+[contracts.medical-record-management]
+path = 'contracts/medical-record-management.clar'
+clarity_version = 2
+epoch = 2.5
 [repl.analysis]
 passes = ['check_checker']
 

@@ -13,3 +13,5 @@ Y
 )contracts/medical-certification-nfts.clar,9/2/921d23e47b9ebeced0b7cab774dcbc18bd91b360
 X
 (tests/medical-certification-nfts.test.ts,5/7/576048cf31285c9743bb4b38be9e39dc14665905
+X
+(contracts/medical-record-management.clar,6/f/6f4552331f3f041cd45602039da315471820ae4d
