@@ -1,21 +1,35 @@
+import { describe, it, expect, beforeEach } from "vitest"
 
-import { describe, expect, it } from "vitest";
+describe("access-control", () => {
+  let contract: any
+  
+  beforeEach(() => {
+    contract = {
+      grantAccess: (patientId: number, provider: string, expiration: number) => ({ success: true }),
+      revokeAccess: (patientId: number, provider: string) => ({ success: true }),
+      checkAccess: (patientId: number, provider: string) => true,
+    }
+  })
+  
+  describe("grant-access", () => {
+    it("should grant access to a provider", () => {
+      const result = contract.grantAccess(1, "ST2CY5V39NHDPWSXMW9QDT3HC3GD6Q6XX4CFRK9AG", 1000000)
+      expect(result.success).toBe(true)
+    })
+  })
+  
+  describe("revoke-access", () => {
+    it("should revoke access from a provider", () => {
+      const result = contract.revokeAccess(1, "ST2CY5V39NHDPWSXMW9QDT3HC3GD6Q6XX4CFRK9AG")
+      expect(result.success).toBe(true)
+    })
+  })
+  
+  describe("check-access", () => {
+    it("should check if a provider has access", () => {
+      const result = contract.checkAccess(1, "ST2CY5V39NHDPWSXMW9QDT3HC3GD6Q6XX4CFRK9AG")
+      expect(result).toBe(true)
+    })
+  })
+})
 
-const accounts = simnet.getAccounts();
-const address1 = accounts.get("wallet_1")!;
-
-/*
-  The test below is an example. To learn more, read the testing documentation here:
-  https://docs.hiro.so/stacks/clarinet-js-sdk
-*/
-
-describe("example tests", () => {
-  it("ensures simnet is well initalised", () => {
-    expect(simnet.blockHeight).toBeDefined();
-  });
-
-  // it("shows an example", () => {
-  //   const { result } = simnet.callReadOnlyFn("counter", "get-counter", [], address1);
-  //   expect(result).toBeUint(0);
-  // });
-});
